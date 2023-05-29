@@ -7,10 +7,10 @@ readme = "README.md"
 packages = [{include = "caller_iot_api"}]
 
 [tool.poetry.dependencies]
-python = "^3.7"
-dynaconf = "2.2.3"
+python = "^3.8.1"
 flask-restx = "^1.1.0"
 flask-httpauth = "^4.8.0"
+dynaconf = "^3.1.12"
 
 
 [build-system]
