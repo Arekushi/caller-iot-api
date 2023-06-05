@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from dynaconf import FlaskDynaconf
 
@@ -20,7 +21,7 @@ def create_app() -> Flask:
 
 @token_auth.verify_token
 def verify_token(token):
-    tokens = app.config.AUTH_TOKENS
+    tokens = [os.getenv('AUTH_TOKENS')]
     
     if token in tokens:
         return token
