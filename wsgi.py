@@ -1,19 +1,9 @@
-from flask import Flask
-from flask_restx import Resource, Api
-from dynaconf import FlaskDynaconf
-
-app = Flask(__name__)
-FlaskDynaconf(app)
-
-api = Api(app)
-
-@api.route('/hello')
-class HelloWorld(Resource):
-    def get(self):
-        return {
-            'hello': 'world'
-        }
+from src.app import create_app
 
 
 if __name__ == '__main__':
-    app.run()
+    app = create_app()
+    app.run(
+        host=app.config.HOST,
+        port=app.config.PORT
+    )
