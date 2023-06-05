@@ -1,0 +1,22 @@
+{
+  "name": "caller-iot-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "prisma generate && prisma py fetch",
+    "postinstall": "prisma generate && prisma py fetch",
+    "postbuild": "prisma generate && prisma py fetch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arekushi/caller-iot-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arekushi/caller-iot-api/issues"
+  },
+  "homepage": "https://github.com/Arekushi/caller-iot-api#readme"
+}
