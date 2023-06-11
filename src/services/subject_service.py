@@ -74,8 +74,9 @@ async def get_next_subject():
         ORDER BY
             day_of_week, end_hour
         """,
-        datetime.datetime.now().strftime('%H:%M:%S')
+        datetime.now().strftime('%H:%M:%S')
     )
+    print(subject)
     
     await prisma.disconnect()
     return subject
@@ -105,7 +106,7 @@ async def get_today_attendances(id):
 
 async def time_ms_to_next_subject():
     next_subject = await get_next_subject()
-    now = datetime.datetime.now()
+    now = datetime.now()
     next_subject_start_hour = datetime_from_str(next_subject['start_hour'], '%H:%M:%S')
     time_ms = time_ms_diff(next_subject_start_hour, now)
     
